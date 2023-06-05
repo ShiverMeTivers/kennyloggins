@@ -1,0 +1,61 @@
+
+###########
+Enabling Logs with AWS Systems Manager
+###########
+
+0. Use AWS Sesson Manager, Remote Desktop Protocol, PowerShell Remoting, or some other method to run the provided script to enable additional Windows Log Sources
+ - Execute the included Enable_Logs_v3.ps1 file to turn on additional Windows auditing.
+ - NOTE: The Script will error out in some places due to multiple Windows types. Even with errors - the script is working just fine.
+ - NOTE: It is HIGHLY recommended that you run the script, however if it cannot be done for some reason - skip this step.
+
+
+1. Create four advanced Parameters in AWS using the following files
+ - Use wincloudwatch-1.json to create the parameter wincloudwatch-1
+ - Use wincloudwatch-2.json to create the parameter wincloudwatch-2
+ - Use wincloudwatch-3.json to create the parameter wincloudwatch-3
+ - Use wincloudwatch-4.json to create the parameter wincloudwatch-4
+ 
+
+2. Wipe the current CloudWatch logging configuration from devices using AWS Systems Manager Console
+	2.1 Navigate to AWS Systems Manager "Run Command"
+	2.2 Choose Command Document "AmazonCloudWatch-ManageAgent"
+	2.3 Set the following options
+	* Command Parameters
+		** Document Version : <Default>
+		** Action: configure(remove)
+		** Mode: ec2 
+		** Optional Configuration Source: all
+		** Optional Restart: yes
+	
+	* Target Selection
+		** Choose the instances that this logging policy will apply to.
+		
+	* Output Options
+		** Remove logging to S3 bucket unless debugging is required.
+		** Remove CloudWatch Run Command logging unless debugging is required
+
+	2.4 Select Run to clear the logging configuration on devices chosen in step 2.3
+
+
+3. Add the new CloudWatch logging configurations to the instances using AWS Systems Manager Console
+	3.1 Navigate to AWS Systems Manager "Run Command"
+	3.2 Choose Command Document "AmazonCloudWatch-ManageAgent"
+	3.3 Set the following options
+ 	* Command Parameters
+		** Document Version : <Default>
+		** Action: configure(append)
+		** Mode: ec2 
+		** Optional Configuration Source: wincloudwatch-1 
+		** Optional Restart: yes
+		
+	* Target Selection
+		** Choose the instances that this logging policy will apply to.
+		
+	* Output Options
+		** Remove logging to S3 bucket unless debugging is required.
+		** Remove CloudWatch Run Command logging unless debugging is required
+		
+	3.4 Select Run to add the logging configuration specified in wincloudwatch-1 to target instances
+	3.5 Execute section 3.3 again and change the Optional Configuration Source to wincloudwatch-2
+	3.6 Execute section 3.3 again and change the Optional Configuration Source to wincloudwatch-3
+	3.7 Execute section 3.3 again and change the Optional Configuration Source to wincloudwatch-4
