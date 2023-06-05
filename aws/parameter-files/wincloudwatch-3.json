@@ -1,0 +1,289 @@
+{
+	"logs": {
+		"logs_collected": {
+			"windows_events": {
+				"collect_list": [{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-Kernel-IO/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-Kernel-PnP/Device Configuration",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-Kernel-Power/Thermal-Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-Kernel-ShimEngine/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-Kernel-StoreMgr/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-Kernel-WDI/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-Kernel-WHEA/Errors",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-Kernel-WHEA/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-LSA/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-NTLM/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-Partition/Diagnostic",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-ReadyBoost/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-ReadyBoostDriver/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-RemoteApp and Desktop Connections/Admin",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-RemoteApp and Desktop Connections/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-RemoteAssistance/Admin",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-RemoteAssistance/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Admin",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-RemoteDesktopServices-RdpCoreTS/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-RemoteDesktopServices-RemoteDesktopSessionManager/Admin",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					}
+				]
+			}
+		}
+	}
+}
