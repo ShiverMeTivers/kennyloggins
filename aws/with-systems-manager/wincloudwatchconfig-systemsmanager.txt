@@ -14,6 +14,7 @@ Enabling Logs with AWS Systems Manager
  - Use wincloudwatch-2.json to create the parameter wincloudwatch-2
  - Use wincloudwatch-3.json to create the parameter wincloudwatch-3
  - Use wincloudwatch-4.json to create the parameter wincloudwatch-4
+ - Use wincloudwatch-4.json to create the parameter wincloudwatch-5
  
 
 2. Wipe the current CloudWatch logging configuration from devices using AWS Systems Manager Console
@@ -59,3 +60,4 @@ Enabling Logs with AWS Systems Manager
 	3.5 Execute section 3.3 again and change the Optional Configuration Source to wincloudwatch-2
 	3.6 Execute section 3.3 again and change the Optional Configuration Source to wincloudwatch-3
 	3.7 Execute section 3.3 again and change the Optional Configuration Source to wincloudwatch-4
+	3.8 Execute section 3.3 again and change the Optional Configuration Source to wincloudwatch-5
