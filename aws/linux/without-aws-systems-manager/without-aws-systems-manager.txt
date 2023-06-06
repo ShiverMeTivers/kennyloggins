@@ -1,0 +1,72 @@
+
+###########
+Enabling CloudWatch without AWS Systems Manager
+###########
+
+
+0. Use AWS Sesson Manager, Remote Desktop Protocol, PowerShell Remoting, or some other method to run the provided script to enable additional Windows Log Sources
+ - Execute the included Enable_Logs_v3.ps1 file to turn on additional Windows auditing.
+ - NOTE: The Script will error out in some places due to multiple Windows types. Even with errors - the script is working just fine.
+ - NOTE: It is HIGHLY recommended that you run the script, however if it cannot be done for some reason - skip this step.
+
+1. Create IAM role to AWS instances for CloudWatch
+- NOTE: See the following link for AWS guidance:
+	-- https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/create-iam-roles-for-cloudwatch-agent-commandline.html
+
+- The IAM role should be called "CloudWatchAgentServerRole"
+
+2. Attach IAM role to desired instances
+- NOTE: See the following link for AWS guidance:
+	-- https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/iam-roles-for-amazon-ec2.html#attach-iam-role
+
+- Ensure each instance has the role attached else CloudWatch will not function.
+
+3. Access instance with RDP, SSH, or some other method to download and install the CloudWatch agent onto each host.
+- NOTE: See the following link for AWS guidance:
+	-- https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/download-cloudwatch-agent-commandline.html
+
+
+4. Copy wincloudwatch-* files from the configurations directory onto target machine and load them into CloudWatch.
+	-- 
+
+	4.1 If using RDP, copy and paste text, S3 buckets, or SCP to copy files.
+	
+		4.1.1 Make the following directory in Windows and move the wincloudwatch-*.json files into the directory
+		-- mkdir C:\Program Files\Amazon\AmazonCloudWatchAgent\imported_configs
+
+		4.1.2 Change Directories into C:\Program Files\Amazon\AmazonCloudWatchAgent\imported_configs and run the following commands
+		-- C:\Program Files\Amazon\AmazonCloudWatchAgent\amazon-cloudwatch-agent-ctl.ps1 -a remove-config -m ec2 -c  all
+		-- C:\Program Files\Amazon\AmazonCloudWatchAgent\amazon-cloudwatch-agent-ctl.ps1 -a append-config -m ec2 -c file://wincloudwatch-1.json -s
+		-- C:\Program Files\Amazon\AmazonCloudWatchAgent\amazon-cloudwatch-agent-ctl.ps1 -a append-config -m ec2 -c file://wincloudwatch-2.json -s
+		-- C:\Program Files\Amazon\AmazonCloudWatchAgent\amazon-cloudwatch-agent-ctl.ps1 -a append-config -m ec2 -c file://wincloudwatch-3.json -s
+		-- C:\Program Files\Amazon\AmazonCloudWatchAgent\amazon-cloudwatch-agent-ctl.ps1 -a append-config -m ec2 -c file://wincloudwatch-4.json -s
+		-- C:\Program Files\Amazon\AmazonCloudWatchAgent\amazon-cloudwatch-agent-ctl.ps1 -a append-config -m ec2 -c file://wincloudwatch-5.json -s
+
+	4.2 If using, advanced SSM parameters to copy configurations
+
+		4.2.1 Create four advanced Parameters in AWS using the following files
+		- NOTE: If unfamiliar with Systems Manager Parameters use the following guideto create parameters:
+			-- https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-create-console.html
+			-- Only use advanced parameters for this document
+			-- Copy and paste the json text into the advanced parameter
+
+		-- Use wincloudwatch-1.json to create the Advanced parameter wincloudwatch-1 
+		-- Use wincloudwatch-2.json to create the Advanced parameter wincloudwatch-2
+		-- Use wincloudwatch-3.json to create the Advanced parameter wincloudwatch-3
+		-- Use wincloudwatch-4.json to create the Advanced parameter wincloudwatch-4
+		-- Use wincloudwatch-4.json to create the Advanced parameter wincloudwatch-5
+
+		4.2.2 Run the following commands
+		-- C:\Program Files\Amazon\AmazonCloudWatchAgent\\amazon-cloudwatch-agent-ctl.ps1 -a remove-config -m ec2 -c  all
+		-- C:\Program Files\Amazon\AmazonCloudWatchAgent\amazon-cloudwatch-agent-ctl.ps1 -a append-config -m ec2 -c ssm:wincloudwatch-1 -s
+		-- C:\Program Files\Amazon\AmazonCloudWatchAgent\amazon-cloudwatch-agent-ctl.ps1 -a append-config -m ec2 -c ssm:wincloudwatch-2 -s
+		-- C:\Program Files\Amazon\AmazonCloudWatchAgent\amazon-cloudwatch-agent-ctl.ps1 -a append-config -m ec2 -c ssm:wincloudwatch-3 -s
+		-- C:\Program Files\Amazon\AmazonCloudWatchAgent\amazon-cloudwatch-agent-ctl.ps1 -a append-config -m ec2 -c ssm:wincloudwatch-4 -s
+		-- C:\Program Files\Amazon\AmazonCloudWatchAgent\amazon-cloudwatch-agent-ctl.ps1 -a append-config -m ec2 -c ssm:wincloudwatch-5 -s
+
+
+5. If done correctly logs will start to populate into CloudWatch log groups and streams with the following naming convention:
+
+	1. i-09c7c0814c39ce8f7 (EC2 Instance ID)
+		2. WEF-* (Log Groups)
+			3. i-09c7c0814c39ce8f7 (Log Stream)

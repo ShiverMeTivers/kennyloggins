@@ -1,0 +1,289 @@
+{
+	"logs": {
+		"logs_collected": {
+			"windows_events": {
+				"collect_list": [{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-RemoteDesktopServices-RemoteFX-Synth3dvsc/Admin",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-RemoteDesktopServices-SessionServices/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-Shell-ConnectedAccountState/ActionCenter",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-Shell-Core/ActionCenter",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-Shell-Core/AppDefaults",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-Shell-Core/LogonTasksChannel",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-Shell-Core/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-SmartCard-Audit/Authentication",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-SmartCard-DeviceEnum/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-SmartCard-TPM-VCard-Module/Admin",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-SmartCard-TPM-VCard-Module/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-Store/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-TerminalServices-ClientActiveXCore/Microsoft-Windows-TerminalServices-RDPClient/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-TerminalServices-ClientUSBDevices/Admin",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-TerminalServices-ClientUSBDevices/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-TerminalServices-LocalSessionManager/Admin",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-TerminalServices-PnPDevices/Admin",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-TerminalServices-PnPDevices/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					},
+					{
+						"event_format": "xml",
+						"event_levels": [
+							"VERBOSE",
+							"INFORMATION",
+							"WARNING",
+							"ERROR",
+							"CRITICAL"
+						],
+						"event_name": "Microsoft-Windows-TerminalServices-Printers/Operational",
+						"log_group_name": "WEF-Applications-and-Services-Logs",
+						"log_stream_name": "{instance_id}",
+						"retention_in_days": 60
+					}
+				]
+			}
+		}
+	}
+}

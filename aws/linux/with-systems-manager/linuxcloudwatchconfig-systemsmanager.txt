@@ -1,0 +1,62 @@
+
+###########
+Enabling Logs with AWS Systems Manager
+###########
+
+1. Create an advanced Parameter in AWS using the following files
+ - NOTE: If unfamiliar with Systems Manager Parameters use the following guide to create parameters:
+ 	-- https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-create-console.html
+	-- Only use advanced parameters for this document
+
+2. Wipe the current CloudWatch logging configuration from devices using AWS Systems Manager Console
+ - NOTE: If unfamiliar with using Systems Manager Run Commands to enable CloudWatch configurations see the following guide:
+	-- https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-on-EC2-Instance-fleet.html#start-CloudWatch-Agent-EC2-fleet
+
+	2.1 Navigate to AWS Systems Manager "Run Command"
+	2.2 Choose Command Document "AmazonCloudWatch-ManageAgent"
+  2.2.5 Click "Run Command"
+	2.3 Set the following options
+	* Command Parameters
+		** Document Version : <Default>
+		** Action: configure(remove)
+		** Mode: ec2 
+		** Optional Configuration Source: all
+		** Optional Restart: yes
+	
+	* Target Selection
+		** Choose the instances that this logging policy will apply to.
+		
+	* Output Options
+		** Remove logging to S3 bucket unless debugging is required.
+		** Remove CloudWatch Run Command logging unless debugging is required
+
+	2.4 Select Run to clear the logging configuration on devices chosen in step 2.3
+
+
+3. Add the new CloudWatch logging configurations to the instances using AWS Systems Manager Console
+	3.1 Navigate to AWS Systems Manager "Run Command"
+	3.2 Choose Command Document "AmazonCloudWatch-ManageAgent"
+  3.2.5 Click "Run Command"
+	3.3 Set the following options
+ 	* Command Parameters
+		** Document Version : <Default>
+		** Action: configure
+		** Mode: ec2 
+    ** Optional Configuration Source: ssm
+		** Optional Configuration Location: linuxcloudwatch
+		** Optional Restart: yes
+		
+	* Target Selection
+		** Choose the instances that this logging policy will apply to.
+		
+	* Output Options
+		** Remove logging to S3 bucket unless debugging is required.
+		** Remove CloudWatch Run Command logging unless debugging is required
+		
+	3.4 Select Run to add the logging configuration specified in linuxcloudwatch to target instances
+
+4. If done correctly logs will start to populate into CloudWatch log groups and streams with the following naming convention:
+
+1. i-09086d31f99e2ef25 (EC2 Instance ID)
+  2. Linux-* (Log Groups)
+     3. i-09086d31f99e2ef25 (Log Stream)
