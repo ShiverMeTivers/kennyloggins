@@ -10,14 +10,20 @@ Enabling Logs with AWS Systems Manager
 
 
 1. Create four advanced Parameters in AWS using the following files
- - Use wincloudwatch-1.json to create the parameter wincloudwatch-1
- - Use wincloudwatch-2.json to create the parameter wincloudwatch-2
- - Use wincloudwatch-3.json to create the parameter wincloudwatch-3
- - Use wincloudwatch-4.json to create the parameter wincloudwatch-4
- - Use wincloudwatch-4.json to create the parameter wincloudwatch-5
+ - NOTE: If unfamiliar with Systems Manager Parameters use the following guideto create parameters:
+ 	-- https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-create-console.html
+	-- Only use advanced parameters for this document
+
+ 1.1 Use wincloudwatch-1.json to create the Advanced parameter wincloudwatch-1
+ 1.2 Use wincloudwatch-2.json to create the Advanced parameter wincloudwatch-2
+ 1.3 Use wincloudwatch-3.json to create the Advanced parameter wincloudwatch-3
+ 1.4 Use wincloudwatch-4.json to create the Advanced parameter wincloudwatch-4
  
 
 2. Wipe the current CloudWatch logging configuration from devices using AWS Systems Manager Console
+ - NOTE: If unfamiliar with using Systems Manager Run Commands to enable CloudWatch configurations see the following guide:
+	-- https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-on-EC2-Instance-fleet.html#start-CloudWatch-Agent-EC2-fleet
+
 	2.1 Navigate to AWS Systems Manager "Run Command"
 	2.2 Choose Command Document "AmazonCloudWatch-ManageAgent"
 	2.3 Set the following options
@@ -60,4 +66,8 @@ Enabling Logs with AWS Systems Manager
 	3.5 Execute section 3.3 again and change the Optional Configuration Source to wincloudwatch-2
 	3.6 Execute section 3.3 again and change the Optional Configuration Source to wincloudwatch-3
 	3.7 Execute section 3.3 again and change the Optional Configuration Source to wincloudwatch-4
-	3.8 Execute section 3.3 again and change the Optional Configuration Source to wincloudwatch-5
+
+4. If done correctly logs will start to populate into CloudWatch log groups and streams with the following naming convention:
+
+ (instance-id)
+instance-id -
