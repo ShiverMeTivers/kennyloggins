@@ -70,6 +70,7 @@ Enabling Logs with AWS Systems Manager
 4. If done correctly logs will start to populate into CloudWatch log groups and streams with the following naming convention:
 
 Log Groups
-- WEF-* (Log Groups)
-  -- i-09c7c0814c39ce8f7 (Log Stream)
+1. i-09c7c0814c39ce8f7 (EC2 Instance ID)
+  2. WEF-* (Log Groups)
+     3. i-09c7c0814c39ce8f7 (Log Stream)
 
