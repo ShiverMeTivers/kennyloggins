@@ -61,12 +61,6 @@
             "retention_in_days": 60
           },
           {
-            "file_path": "/var/log/lastlog",
-            "log_group_name": "Linux-lastlog",
-            "log_stream_name": "{instance_id}",
-            "retention_in_days": 60
-          },
-          {
             "file_path": "/var/log/apache/*",
             "log_group_name": "Linux-apache",
             "log_stream_name": "{instance_id}",
